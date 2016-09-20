@@ -1,0 +1,35 @@
+{
+  "name": "the-feed",
+  "version": "0.1.0",
+  "description": "Dublin cafe culture.",
+  "main": "src/main.jsx",
+  "scripts": {
+    "dev": "./node_modules/webpack/bin/webpack.js -d --watch --config config/webpack.config.js --display-error-details",
+    "build": "./node_modules/webpack/bin/webpack.js -p --config config/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmcguire79/the-feed"
+  },
+  "author": "Cathal McGuire",
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^0.14.0",
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.25.0",
+    "font-awesome": "^4.6.3",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.7.0"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
