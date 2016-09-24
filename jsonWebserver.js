@@ -8,8 +8,13 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get('/thefumbally', function(req, res) {
-    res.sendFile(path.join(__dirname + '/json/thefumbally.json'));
+app.get('/cafe/:cafeName', function(req, res) {
+    res.sendFile(path.join(__dirname + '/json/' + req.params.cafeName + '.json'));
+});
+
+app.get('/cafes', function(req, res) {
+    var cafes = require('./json');
+    res.send(JSON.stringify(cafes));
 });
 
 app.listen(3001);
