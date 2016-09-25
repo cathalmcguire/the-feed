@@ -13,8 +13,13 @@ app.get('/cafe/:cafeName', function(req, res) {
 });
 
 app.get('/cafes', function(req, res) {
-    var cafes = require('./json');
-    res.send(JSON.stringify(cafes));
+    var index = require('./json');
+    res.send(JSON.stringify(index.cafes));
+});
+
+app.get('/', function(req, res) {
+    var index = require('./json');
+    res.send(JSON.stringify(index.home));
 });
 
 app.listen(3001);

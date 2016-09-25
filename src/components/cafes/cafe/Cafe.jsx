@@ -11,7 +11,6 @@ export default class Cafe extends React.Component {
     }
 
     componentWillMount() {
-        console.log('xxxxxxxx');
         axios.get(`http://localhost:3001/cafe/${this.props.params.cafeName}`)
         .then(response => {
             this.setState({ cafe: response.data });
@@ -35,11 +34,20 @@ export default class Cafe extends React.Component {
             <Grid className="cafe">
                 <Row>
                     <Col md={3} mdOffset={1} className="sidebar">
+                        <Col sm={6} md={12}>
                         <h1>{this.state.cafe.title}</h1>
+                        </Col>
                         <p className="banner">{this.state.cafe.banner}</p>
-                        <p className="contact">{this.buildLines(this.state.cafe.contact)}</p>
-                        <p className="address">{this.buildLines(this.state.cafe.address)}</p>
-                        <p className="opening-hours">{this.buildLines(this.state.cafe.openingHours)}</p>
+                        <Col sm={6} md={12}>
+                            <p className="contact">
+                                <a href={`tel:${this.state.cafe.contactPhone}`}>{this.state.cafe.contactPhone}</a><br/>
+                                <a href={`mailto:${this.state.cafe.contactEmail}`}>{this.state.cafe.contactEmail}</a>
+                            </p>
+                            <p className="address">{this.buildLines(this.state.cafe.address)}</p>
+                        </Col>
+                        <Col sm={6} md={12}>
+                            <p className="opening-hours">{this.buildLines(this.state.cafe.openingHours)}</p>
+                        </Col>
                     </Col>
                     <Col md={7}>
                         <img src={`static/images/${this.state.cafe.image}`} />
